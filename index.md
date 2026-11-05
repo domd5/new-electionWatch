@@ -1,35 +1,233 @@
 ---
 title: Home
 layout: home
+nav_order: 1
 ---
 
-This is a *bare-minimum* template to create a Jekyll site that uses the [Just the Docs] theme. You can easily set the created site to be published on [GitHub Pages] – the [README] file explains how to do that, along with other details.
 
-If [Jekyll] is installed on your computer, you can also build and preview the created site *locally*. This lets you test changes before committing them, and avoids waiting for GitHub Pages.[^1] And you will be able to deploy your local build to a different platform than GitHub Pages.
-
-More specifically, the created site:
-
-- uses a gem-based approach, i.e. uses a `Gemfile` and loads the `just-the-docs` gem
-- uses the [GitHub Pages / Actions workflow] to build and publish the site on GitHub Pages
-
-Other than that, you're free to customize sites that you create with this template, however you like. You can easily change the versions of `just-the-docs` and Jekyll it uses, as well as adding further plugins.
-
-[Browse our documentation][Just the Docs] to learn more about how to use this theme.
-
-To get started with creating a site, simply:
-
-1. click "[use this template]" to create a GitHub repository
-2. go to Settings > Pages > Build and deployment > Source, and select GitHub Actions
-
-If you want to maintain your docs in the `docs` directory of an existing project repo, see [Hosting your docs from an existing project repo](https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md#hosting-your-docs-from-an-existing-project-repo) in the template README.
-
-----
-
-[^1]: [It can take up to 10 minutes for changes to your site to publish after you push the changes to GitHub](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#creating-your-site).
-
-[Just the Docs]: https://just-the-docs.github.io/just-the-docs/
-[GitHub Pages]: https://docs.github.com/en/pages
-[README]: https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md
-[Jekyll]: https://jekyllrb.com
-[GitHub Pages / Actions workflow]: https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/
-[use this template]: https://github.com/just-the-docs/just-the-docs-template/generate
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Political Campaign</title>
+    <style>
+              body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+        /* Wrapper to keep the top section at the top */
+        .top-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            top: 0;
+            z-index: 999;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .image-box, .text-box {
+            flex: 1;
+            max-width: 50%; /* Ensures the image and text take up equal space */
+        }
+        .image-box img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .text-box {
+            background-color: #1EB07F; /* Purple box */
+            padding: 20px;
+            margin-left: 20px;
+            border-radius: 10px;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        h1 {
+            font-size: 2.5vw;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.5vw;
+            margin-bottom: 20px;
+        }
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+        }
+        .input-field {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 80%;
+            max-width: 300px;
+            font-size: 1.2vw;
+        }
+        .submit-button {
+            background-color: white;
+            color: #1EB07F;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2vw;
+            text-align: center;
+            width: 80%;
+            max-width: 300px;
+        }
+        .submit-button:hover {
+            background-color: #1EB07F;
+            color: white;
+        }
+        /* Content below the top section */
+        .below-content {
+            padding: 40px;
+            text-align: center;
+            background-color: #27262b;
+        }
+        .below-content h2 {
+            font-size: 28px;
+            color: #333;
+        }
+                .donate-bar {
+            background-color: #53D4E6; /* Solid color (Green in this case) */
+            color: white;
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        .donate-bar h2 {
+            margin: 0;
+            margin-right: 20px;
+            font-size: 24px;
+        }
+        .donate-bar a {
+            background-color: white;
+            color: #4CAF50;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .donate-bar a:hover {
+            background-color: #45a049;
+            color: white;
+        }
+                .merch-section {
+            padding: 40px;
+            text-align: center;
+        }
+        .merch-section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .merch-preview {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .merch-preview img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 2px solid #ddd;
+        }
+        .merch-section a {
+            background-color: #333;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .merch-section a:hover {
+            background-color: #555;
+        }
+            .policies-section {
+        background-color: #7095DB; /* Matches main site blue color */
+        padding: 40px;
+        text-align: center;
+        border-radius: 10px;
+        margin: 40px auto;
+        max-width: 800px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    .policies-content h2 {
+        color: white;
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+    .policies-content p {
+        color: #f7f7f7;
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+    }
+    .policies-button {
+        background-color: #4CAF50; /* Green to match other elements */
+        color: white;
+        padding: 15px 30px;
+        text-decoration: none;
+        font-size: 1.2rem;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+    .policies-button:hover {
+        background-color: #45a049; /* Darken button on hover */
+    }
+    </style>
+</head>
+    <div class="top-section">
+        <div class="image-box">
+            <img src="newhomephoto.png" alt="Candidate Image"> <!-- Replace with your image path -->
+        </div>
+        <div class="text-box">
+            <h1>Your Voice Matters</h1>
+            <p>Vote for Miles this election!</p>
+            <div class="newsletter-form">
+                <input type="email" class="input-field" placeholder="Enter your email" required>
+                <button class="submit-button">Sign Up for Newsletter</button>
+            </div>
+        </div>
+    </div>
+    <div class="below-content">
+        </div>
+        <div class="policies-content">
+        <h2>Explore Our Policies & Issues</h2>
+        <p>Learn more about where we stand on the issues that matter most. Your voice shapes our future!</p>
+        <a href="/WEBSITE/Issues/Index.html" class="policies-button">View Policies</a>
+        </div>
+        <div class="merch-section">
+        <h2 style="color:white;">Check Out Our Merchandise</h2>
+        <div class="merch-preview">
+            <img src="product1.jpg" alt="T-Shirt">  <!-- Replace with actual image paths -->
+            <img src="product2.jpg" alt="Cap">
+            <img src="product3.jpg" alt="Mug">
+        </div>
+        <a href="/WEBSITE/Donations.html">Visit Our Merch Page</a>
+        </div>
+      <div class="donate-bar">
+        <h2>Donate Now</h2>
+        <a href="/WEBSITE/Donations.html">Go to Donations Page</a>
+        </div>
+</html>
