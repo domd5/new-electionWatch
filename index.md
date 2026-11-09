@@ -202,7 +202,7 @@ nav_order: 1
             <img src="newhomephoto.png" alt="Candidate Image"> <!-- Replace with your image path -->
         </div>
         <div class="text-box">
-            <h1>Your Voice Matters</h1>
+            <h1>Your pp matters fr</h1>
             <p>Vote for diddy this election!</p>
             <div class="newsletter-form">
                 <input type="email" class="input-field" placeholder="Enter your email" required>
