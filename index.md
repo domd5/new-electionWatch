@@ -203,7 +203,7 @@ nav_order: 1
         </div>
         <div class="text-box">
             <h1>Your Voice Matters</h1>
-            <p>Vote for Miles this election!</p>
+            <p>Vote for diddy this election!</p>
             <div class="newsletter-form">
                 <input type="email" class="input-field" placeholder="Enter your email" required>
                 <button class="submit-button">Sign Up for Newsletter</button>
