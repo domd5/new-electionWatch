@@ -202,8 +202,8 @@ nav_order: 1
             <img src="newhomephoto.png" alt="Candidate Image"> <!-- Replace with your image path -->
         </div>
         <div class="text-box">
-            <h1>Your pp matters fr</h1>
-            <p>Vote for diddy this election!</p>
+            <h1>Your Vote Is Your Voice
+             <p>Vote For Salathaniel Brown This Election!</p>
             <div class="newsletter-form">
                 <input type="email" class="input-field" placeholder="Enter your email" required>
                 <button class="submit-button">Sign Up for Newsletter</button>
